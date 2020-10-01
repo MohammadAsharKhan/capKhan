@@ -1,8 +1,15 @@
 extends layout
 
-block content
-  h1 ShoppingCart
+block content 
+  h1 Your Cart
+  h2='Order ID: '+ shoppingCart.orderId
+  h2='Customer Name: ' + shoppingCart.customerName
   hr
-  .row
-    .col-md-6
-      h2=shoppingcart[0].productID
+  p='ID: ' + product.productID
+  p='Name: ' + product.productName
+  p='Brand: ' + product.productBrand
+  p='Description: ' + product.productDescription
+  p='Price: $' + product.productPrice
+  hr
+  h2='Total Items: ' + shoppingCart.itemQuantity
+  h2='Amount Due: ' + shoppingCart.orderTotal

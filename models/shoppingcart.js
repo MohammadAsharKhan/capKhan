@@ -1,13 +1,20 @@
 const mongoose = require('mongoose');
-
-const shoppingcartSchema = new mongoose.Schema({
-    orderID: Number,
-    productID: { type: String, unique: true},
-    name: String,
-    brand: Number,
-    price: Number,
-    description: String,
+const shoppingCartSchema = new mongoose.Schema({
+    orderId: Number,
+    customerID: Number,
+    customerName: String,
+    products: [
+        {
+            productID: Number,
+            productName: String,
+            productDescription: String,
+            prouctBrand: String,
+            productPrice: Number,
+            quantity: Number
+        }
+    ],
+    itemQuantity: Number,
+    orderTotal: Number,
 })
-const shoppingcart = mongoose.model('shoppingcart', shoppingcartSchema);
-
-module.exports = shoppingcart;
+const ShoppingCart = mongoose.model('ShoppingCart', shoppingCartSchema);
+module.exports = ShoppingCart;
