@@ -1,0 +1,21 @@
+extends ../layout 
+
+block content
+    h1 All Products
+    hr
+    .row
+    each product in products
+        .col-md-6
+        p
+        a(href="../images/" + product.productUPC + ".png" alt=product.productUPC target="new")
+        img(src="../images/" + product.productUPC + ".png" alt=product.productUPC height=250, width=250)
+        p
+        p='ID: ' + product.productID
+        p='Name: ' + product.productName
+        p='Brand: ' + product.productBrand
+        p='Description: ' + product.productDescription
+        p='Price: $' + product.productPrice
+        p='UPC: ' + product.productUPC
+        p
+        a.btn.btn-raised(href='/shoppingCart/addProduct', role='button') Add to Cart »
+    p

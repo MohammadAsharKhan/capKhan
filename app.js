@@ -33,7 +33,8 @@ const homeController = require('./controllers/home');
 const userController = require('./controllers/user');
 const apiController = require('./controllers/api');
 const contactController = require('./controllers/contact');
-const shoppingcartController = require('./controllers/shoppingcart');
+const cartController = require('./controllers/cart');
+const productController = require('./controllers/product');
 
 /**
  * API keys and Passport configuration.
@@ -124,6 +125,21 @@ app.use('/js/lib', express.static(path.join(__dirname, 'node_modules/bootstrap/d
 app.use('/js/lib', express.static(path.join(__dirname, 'node_modules/jquery/dist'), { maxAge: 31557600000 }));
 app.use('/webfonts', express.static(path.join(__dirname, 'node_modules/@fortawesome/fontawesome-free/webfonts'), { maxAge: 31557600000 }));
 
+// Product routes
+app.get('/products', productController.getAllProducts);
+app.get('/products/refrigerators', productController.getRefrigerators);
+app.get('/products/microwaves', productController.getMicrowaves);
+app.get('/products/coffeemakers', productController.getCoffeemakers);
+app.get('/products/blenders', productController.getBlenders);
+
+
+// Shopping cart routes
+app.get('/cart', cartController.viewShoppingcart);
+//app.post('/shoppingcart/addItem', shoppingCartController.addItem);
+//app.post('/shoppingcart/removeItem', shoppingCartController.removeItem);
+//app.post('/shoopingcart/updateCart', shoppingCartController.updateCart);
+
+
 /**
  * Primary app routes.
  */
@@ -146,10 +162,6 @@ app.post('/account/profile', passportConfig.isAuthenticated, userController.post
 app.post('/account/password', passportConfig.isAuthenticated, userController.postUpdatePassword);
 app.post('/account/delete', passportConfig.isAuthenticated, userController.postDeleteAccount);
 app.get('/account/unlink/:provider', passportConfig.isAuthenticated, userController.getOauthUnlink);
-app.get('/shoppingcart', shoppingcartController.viewShoppingcart);
-app.post('/shoppingcart/addItem', shoppingcartController.addItem);
-app.post('/shoppingcart/removeItem', shoppingcartController.removeItem);
-app.post('/shoopingcart/updateCart', shoppingcartController.updateCart);
 
 /**
  * API examples routes.

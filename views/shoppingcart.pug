@@ -1,15 +1,16 @@
-//extends layout
+extends layout
 
-//block content 
+block content 
   h1 Your Cart
-  h2='Order ID: '+ shoppingCart.orderId
-  h2='Customer Name: ' + shoppingCart.customerName
+  h2='Order ID: '+ cart[0].orderID
+  h2='Customer Name: ' + cart[0].customerName
   hr
-  p='ID: ' + product.productID
-  p='Name: ' + product.productName
-  p='Brand: ' + product.productBrand
-  p='Description: ' + product.productDescription
-  p='Price: $' + product.productPrice
-  hr
-  h2='Total Items: ' + shoppingCart.itemQuantity
-  h2='Amount Due: ' + shoppingCart.orderTotal
+  each product in cart[0].products
+   p='ID: ' + product.productID
+   p='Name: ' + product.productName
+   p='Brand: ' + product.productBrand
+   p='Description: ' + product.productDescription
+   p='Price: $' + product.productPrice
+   hr
+  h2='Total Items: ' + cart[0].itemQuantity
+  h2='Amount Due: ' + cart[0].orderTotal

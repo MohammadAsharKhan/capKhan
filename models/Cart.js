@@ -1,14 +1,14 @@
 const mongoose = require('mongoose');
 const shoppingCartSchema = new mongoose.Schema({
-    orderId: Number,
+    orderID: Number,
     customerID: Number,
     customerName: String,
     products: [
         {
-            productID: Number,
+            productID: String,
             productName: String,
             productDescription: String,
-            prouctBrand: String,
+            productBrand: String,
             productPrice: Number,
             quantity: Number
         }
@@ -16,5 +16,5 @@ const shoppingCartSchema = new mongoose.Schema({
     itemQuantity: Number,
     orderTotal: Number,
 })
-const ShoppingCart = mongoose.model('ShoppingCart', shoppingCartSchema);
-module.exports = ShoppingCart;
+const Cart = mongoose.model('Cart', shoppingCartSchema);
+module.exports = Cart;

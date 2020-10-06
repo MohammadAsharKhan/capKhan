@@ -1,29 +1,41 @@
 extends layout
 
 block content
-  h1 Hackathon Starter
+  h1 Kitchen Appliances
   p.lead A boilerplate for Node.js web applications.
   hr
   .row
     .col-md-6
+      p
+      img(src="../images/B123ABC.png" height=250, width=250)
+      p
       h2=product[0].productID
       p=product[0].productName
       p=product[0].productDescription
       p=product[0].productBrand
       p=product[0].productPrice
     .col-md-6
+      p
+      img(src="../images/C321CBA.png" height=250, width=250)
+      p
       h2=product[1].productID
       p=product[1].productName
       p=product[1].productDescription
       p=product[1].productBrand
       p=product[1].productPrice
     .col-md-6
+      p
+      img(src="../images/M111AAA.png" height=250, width=300)
+      p
       h2=product[2].productID
       p=product[2].productName
       p=product[2].productDescription
       p=product[2].productBrand
       p=product[2].productPrice
     .col-md-6
+      p
+      img(src="../images/R222BBB.png" height=250, width=200)
+      p
       h2=product[3].productID
       p=product[3].productName
       p=product[3].productDescription
