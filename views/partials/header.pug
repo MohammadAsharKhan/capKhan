@@ -1,8 +1,7 @@
 .navbar.navbar-light.fixed-top.navbar-expand-lg.bg-light
   .container
-    a.navbar-brand(href='/')
-      i.fas.fa-cube
-      |Team 3
+    a.navbar-brand(href="/")
+      img(src="../images/favicon.png" height=20, width=20)
     button.navbar-toggler(type='button', data-toggle='collapse', data-target='.navbar-collapse')
       span.sr-only Toggle navigation
       span.navbar-toggler-icon
@@ -10,8 +9,10 @@
       ul.nav.navbar-nav
         li.nav-item(class=(title === 'Home') ? 'active' : undefined)
           a.nav-link(href='/') Home
+            i.fas.fa-home
         li.nav-item(class=(title === 'Cart') ? 'active' : undefined)
           a.nav-link(href='/cart') Your Cart
+            i.fas.fa-shopping-cart
         //- li.nav-item(class=(title === 'API Examples') ? 'active' : undefined)
         //-   a.nav-link(href='/api') API Examples
         li.nav-item(class=(title === 'Contact') ? 'active' : undefined)
